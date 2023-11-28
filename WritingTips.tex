@@ -1,0 +1,54 @@
+%\documentclass[conf]{new-aiaa}
+\documentclass[journal]{new-aiaa} %for journal papers
+\usepackage[utf8]{inputenc} % Used by Colin
+\usepackage{xcolor} % Used by Colin
+\usepackage{soul} % Used by Colin
+
+\usepackage{graphicx} % Used by Colin
+\usepackage{amsmath} % Used by Colin
+\usepackage[version=4]{mhchem} % Used by Colin
+\usepackage{siunitx} % Used by Colin
+\usepackage{longtable,tabularx} % Used by Colin
+\setlength\LTleft{0pt} % Used by Colin
+
+% Custom packages
+\usepackage{subcaption} % Used by Colin
+\usepackage{makecell}
+\usepackage{comment}
+
+% Packages to allow InkScape Text to Display and Autoformat in figures
+\graphicspath{{Photos/}{Photos/MUFASA/}{Photos/CFD/}{Photos/CFD/Coefficients}{Photos/Results/ModelVerification/}{Photos/Stability/}{Photos/Aircraft/}{Photos/Results/HandlingQualities/}{Photos/Results/ResponseQualities/}} % The subfolders where images are stored
+
+\usepackage{multirow} % Allows for multirow table entries
+\usepackage{array} % Allows for centered table entries
+\usepackage{booktabs} % Allows for centered table entries
+\usepackage{threeparttable} % Aligns table caption to be the width of the table
+
+\newcommand{\pbox}[1]{\boxed{\phantom{#1}}} % Creates phantom (ie. empty) boxes in equations
+
+\title{Writing Tips for the AERO-CORE Lab} %Title to be <= 12 words as per: https://www.aiaa.org/publications/journals/Journal-Author#follow-the-minimum-formatting-requirements
+
+\author{
+	Benjamin Durante\footnote{MSc, Department of Mechanical and Manufacturing Engineering}
+}
+\affil{University of Calgary, Calgary, Alberta, Canada, T2N 4V8}
+
+\begin{document}
+
+\include{variableDefinitions} % Document containing variables used throughout
+
+	\maketitle
+	\input{abstract}
+	\input{nomenclature}
+	\input{introduction}
+	\input{coding}
+	%\section*{Appendix}
+
+	%An Appendix, if needed, should appear before the acknowledgments.
+
+	\section*{Acknowledgments}
+	Funding for this work was provided by the AERO-CORE research group. 
+
+	\bibliography{library_ben}
+
+\end{document}
