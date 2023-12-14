@@ -105,4 +105,4 @@
 \renewcommand{\bibfont}{\small}
 
 \RequirePackage[hyphens]{url}
-\RequirePackage{hyperref}
+\RequirePackage[hidelinks]{hyperref}

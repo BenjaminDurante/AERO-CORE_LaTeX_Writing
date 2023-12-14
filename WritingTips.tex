@@ -17,16 +17,18 @@
 \usepackage{comment}
 
 % Packages to allow InkScape Text to Display and Autoformat in figures
-\graphicspath{{Photos/}{Photos/MUFASA/}{Photos/CFD/}{Photos/CFD/Coefficients}{Photos/Results/ModelVerification/}{Photos/Stability/}{Photos/Aircraft/}{Photos/Results/HandlingQualities/}{Photos/Results/ResponseQualities/}} % The subfolders where images are stored
+\graphicspath{{Photos/}{Photos/MUFASA/}{Photos/Figures/}} % The subfolders where images are stored
 
 \usepackage{multirow} % Allows for multirow table entries
 \usepackage{array} % Allows for centered table entries
 \usepackage{booktabs} % Allows for centered table entries
 \usepackage{threeparttable} % Aligns table caption to be the width of the table
 
-\newcommand{\pbox}[1]{\boxed{\phantom{#1}}} % Creates phantom (ie. empty) boxes in equations
+\usepackage[nameinlink]{cleveref}
+\crefformat{equation}{#2Eq.~#1#3} % adjust what the command \cref{label}
+\crefformat{figure}{#2Fig.~#1#3} % adjust what the command \cref{label} displays for figures displays for figures
 
-\title{Writing Tips for the AERO-CORE Lab} %Title to be <= 12 words as per: https://www.aiaa.org/publications/journals/Journal-Author#follow-the-minimum-formatting-requirements
+\title{Writing and \LaTeX\ Tips for the AERO-CORE Lab} %Title to be <= 12 words as per: https://www.aiaa.org/publications/journals/Journal-Author#follow-the-minimum-formatting-requirements
 
 \author{
 	Benjamin Durante\footnote{MSc, Department of Mechanical and Manufacturing Engineering}
@@ -39,8 +41,9 @@
 
 	\maketitle
 	\input{abstract}
+	\tableofcontents
 	\input{nomenclature}
-	\input{introduction}
+	\input{writing}
 	\input{coding}
 	%\section*{Appendix}
 
