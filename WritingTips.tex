@@ -23,12 +23,15 @@
 \usepackage{array} % Allows for centered table entries
 \usepackage{booktabs} % Allows for centered table entries
 \usepackage{threeparttable} % Aligns table caption to be the width of the table
+\usepackage{matlab-prettifier} % Allows for the addition of MATLAB code
+
+\usepackage{pdfpages} % Allows for inclusion of other PDFs
 
 \usepackage[nameinlink]{cleveref}
 \crefformat{equation}{#2Eq.~#1#3} % adjust what the command \cref{label}
 \crefformat{figure}{#2Fig.~#1#3} % adjust what the command \cref{label} displays for figures displays for figures
 
-\title{Writing and \LaTeX\ Tips for the AERO-CORE Lab} %Title to be <= 12 words as per: https://www.aiaa.org/publications/journals/Journal-Author#follow-the-minimum-formatting-requirements
+\title{Writing and \LaTeX\ Tips for academic writing in the AERO-CORE Lab} %Title to be <= 12 words as per: https://www.aiaa.org/publications/journals/Journal-Author#follow-the-minimum-formatting-requirements
 
 \author{
 	Benjamin Durante\footnote{MSc, Department of Mechanical and Manufacturing Engineering}
@@ -45,7 +48,9 @@
 	\input{nomenclature}
 	\input{writing}
 	\input{coding}
-	%\section*{Appendix}
+	\input{process}
+	\input{conclusion}
+	
 
 	%An Appendix, if needed, should appear before the acknowledgments.
 
@@ -53,5 +58,7 @@
 	Funding for this work was provided by the AERO-CORE research group. 
 
 	\bibliography{library_ben}
+	
+	\input{Appendix}
 
 \end{document}
