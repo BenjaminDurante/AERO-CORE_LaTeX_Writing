@@ -28,13 +28,15 @@ This main file then imports code written in the remaining .TEX files.
 File types ending with .CLS and .BST are files used to automatically format the main document. 
 File types ending with .BIB is for the \href{https://www.bibtex.org/}{Bib\TeX} bibliography entries. 
 
+
+
 \subsection{Internal Document Referencing}
 
 \LaTeX\ automatically handles referencing using its built-in \verb*|\ref{}| or the often preferred \textit{cleveref} userpackage \verb*|\cref{}|. 
 How referencing works is a \verb*|\label{}| is placed at a section title (\verb*|\label{sec:}|), in an equation (\verb*|\label{eqn:}|), in a table (\verb*|\label{tab:}|), or in a figure (\verb*|\label{fig:}|). 
 With a label in place, say in \cref{fig:mufasaB2}, the Cleveref is used to add a reference in text. For example, \cref{fig:mufasaB2} is labelled \textit{fig:mufasaB2}, so to reference it in-text the code is \verb*|\cref{fig:mufasaB2}|.
 
-\subsection{Citations}
+\subsection{Citations} \label{sec:citations}
 
 Always check the style and expected format of references for the journal/conference/university the paper will be submitted to. 
 When citing, ensure the Bib\TeX\ file has all the required information to be displayed according to the journal/conference/university requirements. 
@@ -42,12 +44,24 @@ Unfortunately, the Bib\TeX\ data fields required vary slightly between referenci
 An example Bib\TeX\ entry for work by \citeauthor{BenThesis} \cite{BenThesis} is provided in \Cref{sec:appendixBibTex}. 
 Additional Bib\TeX\ entry formats are found online, with common types being \verb*|@article{}|, \verb*|@inproceedings{}|, \verb*|@techreport{}|, \verb*|@mastersthesis{}|, \verb*|@phdthesis{}|, \verb*|@book{}|, and \verb*|@misc{}|. 
  
-Based on the Bib\TeX\ identification name (ex. \textit{BenThesis} in \Cref{sec:appendixBibTex}) references are easily cited in-text and added to the bibliography. Multiple commands are used to automatically cite a work depending on the presentation desired:
-\begin{itemize}
-	\item \verb*|\cite{BenThesis}| cites the text numerically as follows: \cite{BenThesis},
-	\item \verb*|\citep{BenThesis}| acts very similarily to the previous command in IEEE and AIAA as follows: \citep{BenThesis}, however, this command behaves differently with the APA citation style, 
-	\item \verb*|\citeauthor{BenThesis}\cite{BenThesis}| automatically fills in the authors name and then adds the numerical reference, automatically linking both, as follows: \citeauthor {BenThesis} \cite{BenThesis}.
-\end{itemize}
+Based on the Bib\TeX\ identification name (ex. \textit{BenThesis} in \Cref{sec:appendixBibTex}) references are easily cited in-text and added to the bibliography. 
+Multiple commands are used to automatically cite a work depending on the presentation desired. 
+Common \LaTeX\ commands, and their resulting text, are presented in \Cref{tab:citationCoding}.
+
+\begin{table}[hbt!]
+	\centering
+	\begin{threeparttable}[b]
+		\caption{\LaTeX\ commands and their resulting text using common citation formats. \label{tab:citationCoding}}
+		\begin{tabular}{llll}
+			\toprule
+			\multicolumn{1}{c}{\multirow{2}{*}{\textbf{\LaTeX\ Command}}} & \multicolumn{3}{c}{\textbf{Citation Format}} \\
+			\multicolumn{1}{c}{} & \multicolumn{1}{c}{\textbf{AIAA}} & \multicolumn{1}{c}{\textbf{IEEE}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}APA\\ (\textit{apalike})\end{tabular}}} \\ \midrule
+			\verb*|\cite{BenThesis}| & \cite{BenThesis} & \cite{BenThesis} & Durante (2023) \\
+			\verb*|\citep{BenThesis}| & \citep{BenThesis} & N/A & (Durante, 2023) \\
+			\verb*|\citeauthor{BenThesis}| & \citeauthor{BenThesis} & \citeauthor{BenThesis} & \citeauthor{BenThesis} \\ \bottomrule
+		\end{tabular}
+	\end{threeparttable}
+\end{table}
 
 
 \subsection{Figure Creation} \label{sec:figureCreation}

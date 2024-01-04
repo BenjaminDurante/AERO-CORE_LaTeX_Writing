@@ -61,10 +61,11 @@ One such major exception is that the present tense is always used when a specifi
 \subsubsection{Figures and Tables} \label{sec:documentSetupFigureTableRules}
 
 Figures and tables are useful tools to present complex visual data, or relate two concepts graphically. 
-General presentation norms and rules exist that apply to figures and tables. 
+General presentation norms and rules exist that apply to figures and tables.  
 A couple of these shared norms are listed here: 
 \begin{itemize}
 	\item Figures and tables must always be introduced in-text before they are presented, 
+	\item Figures and tables must always be introduced in a consistent way as presented in~\Cref{sec:consistencySubsection}, 
 	\item Figures and tables should not have titles, 
 	\item Figure and table text should match document size and font, 
 	\item Captions should remain within the margins of the figure/table they describe, 
@@ -81,7 +82,7 @@ Specific figure considerations include:
 	\item Colour choice should be considerate of colourblind people \cite{colourScienceMisuse},
 	\item Sub-figures require captions, 
 	\item Axes labels should be present and contain units, 
-	\item Axes should end on definitive numbers. 
+	\item Axes should start and end on definitive numbers. 
 \end{itemize}
 
 \noindent
@@ -152,6 +153,14 @@ Parallel to this concept of the uncertainty of \textit{this} is how authors some
 
 Word choice is paramount and matters. While often used interchangeably in normal language, \textit{compute}, \textit{evaluate}, and \textit{calculate} suggest very different approaches were taken. Consider what verbs are being used throughout the document and what they imply. 
 
+\subsubsection{Consistency} \label{sec:consistencySubsection}
+
+Consistency applies to terminology describing research concepts and the document features. 
+Word usage describing research concepts should be consistent with the broader literature. 
+As an example, the word \textit{gyre} and \textit{vortex} both describe similar fluid phenomenon. Based on the existing literature, \textit{gyre} should be used in an oceanography paper, while \textit{vortex} should be used in a fluids paper \cite{Vortecies}. 
+Research terminology and acronym usage should also be consistent throughout a document. As an example, while the control system H-Infinity is referred to in multiple ways in the literature (ie. H-Infinity, H-infinity, H-$\inf$, or H-Inf) only one method should be used within a single document. 
+Finally, consistency should be applied when referencing document features such as figures, equations, and tables (ie. Fig. or Figure, Eq. or Equation, Tab. or Table). 
+Refer to the feature labelling guidelines set out for the paper being written or choose one style and stick with it according to J. Edwards (personal communication, December 21, 2023). 
 
 \subsubsection{Commas}
 
@@ -167,7 +176,7 @@ It is imperative that references are used properly and correctly associated to t
 As stated by \citeauthor{referncingVirtues} \cite{referncingVirtues}:
 \begin{quotation}
 	\noindent
-	A reference citation is supposed to provide accurate underpinning for a statement and to represent the current state of research, or, in the case of a maverick opinion, to ensure it is recognizable as such. \cite{referncingVirtues}
+	A reference citation is supposed to provide accurate underpinning for a statement and to represent the current state of research, or, in the case of a maverick opinion, to ensure it is recognizable as such \cite{referncingVirtues}.
 \end{quotation} 
 
 \noindent
@@ -183,5 +192,17 @@ Some good rules of thumb to guide if you need to reference a statement are:
 If the answer to any of the first four is no, or the last is yes, then you \textbf{NEED} a reference. 
 If a reference cannot be found to support a statement, either the statement is incorrect, or it is too broad and should be reworded to be more defensible. 
 
-References are placed at the end of a sentence if describing a single idea, if describing multiple ideas, referencing is placed just behind the idea it is associated with. 
-Proper referencing is also a topic formally covered by the \citeauthor{writingUofC} \cite{writingUofC} and \citeauthor{writingCoursesUofC} \cite{writingCoursesUofC}.
+References are placed at the end of a sentence if describing a single idea, if describing multiple ideas, referencing is placed just behind the idea it is associated with. The name of the author is included when necessary, the reference should be formatted to seamlessly integrate grammatically with the associated text. 
+An example of when to use each is presented in the following two sentences:
+
+\begin{quotation}
+	\noindent 
+	The University of Calgary is developing a Small-scale Supersonic Uncrewed Aerial Vehicle (SSUAV) \cite{BenConference}. SSUAV's pose unique handling quality challenges according to \citeauthor{BenConference} \cite{BenConference}.
+\end{quotation}
+
+
+\noindent 
+Reference style is automatically controlled when using \LaTeX\ as presented in \Cref{sec:citations}, however, it is always good practice to check references are following the correct format. When citing a reference by listing authors, the format changes between citation styles, APA for example has very strict rules which indicate any reference having more than two authors must list in-text the first author followed by \textit{et al.} \cite{apa}.
+
+Proper referencing is a topic formally instructed on by the \citeauthor{writingUofC} \cite{writingUofC} and \citeauthor{writingCoursesUofC} \cite{writingCoursesUofC}. 
+Proper APA referencing is discussed by \citeauthor{apa} \cite{apa}. 
