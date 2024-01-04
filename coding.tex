@@ -6,8 +6,8 @@ Common editing programs include \href{https://www.overleaf.com/}{OverLeaf} for o
 
 \subsection{Document Setup}
 Long \LaTeX\ documents become very confusing, very quickly if a proper file structure is not established. 
-\LaTeX\ uses one document to import required userpackages, set formats, and generate a .PDF document. 
-It is suggested to use the main \LaTeX\ document only for the global userpackages, and the calling of subsequent document files. 
+\LaTeX\ uses one document to import required packages, set formats, and generate a .PDF document. 
+It is suggested to use the main \LaTeX\ document only for the global packages, and the calling of subsequent document files. 
 Therefore, limited writing should occur within the main \LaTeX\ file. 
 Sections of a document should be individual files, added to the main file via the command \verb*|\input{}|. 
 An example file structure, with \LaTeX\ files in the main folder, and supporting photos and resources in sub-folders, is presented in \cref{fig:documentSetupExample}.
@@ -15,8 +15,8 @@ An example file structure, with \LaTeX\ files in the main folder, and supporting
 
 \begin{figure}[hbt!]
 	\centering
-	\captionsetup{width=0.7\textwidth}
-	\includegraphics[width=0.7\textwidth]{Photos/Figures/projectStructure.png}
+	\captionsetup{width=0.6\textwidth}
+	\includegraphics[width=0.6\textwidth]{Photos/Figures/projectStructure.png}
 	\caption{Example file structure for a \LaTeX\ document project.}
 	\label{fig:documentSetupExample}
 	\hfill
@@ -28,13 +28,99 @@ This main file then imports code written in the remaining .TEX files.
 File types ending with .CLS and .BST are files used to automatically format the main document. 
 File types ending with .BIB is for the \href{https://www.bibtex.org/}{Bib\TeX} bibliography entries. 
 
+\subsection{Useful Command Packages}
 
+A list of useful \LaTeX\ command packages not always included in \LaTeX\ templates are detailed in \Cref{tab:usefulPackagesText,tab:usefulPackagesFiguresTables,tab:usefulPackagesMath}. 
+The packages presented in \Cref{tab:usefulPackagesText,tab:usefulPackagesFiguresTables,tab:usefulPackagesMath} are in no-way representative of all packages in existence, however, they have been included here due to the usefulness they have previously provided the author. 
+
+\begin{table}[hbt!]
+	\centering
+	\begin{threeparttable}[b]
+		\caption{Useful \LaTeX\ packages related to document text.}
+		\label{tab:usefulPackagesText}
+		\begin{tabular}{ll}
+			\toprule
+			\textbf{Package} & \textbf{Description} \\ \midrule
+			\href{https://ctan.org/pkg/natbib}{natbib} & Bibliography style formatting \\
+			\href{https://ctan.org/pkg/glossaries}{glossaries} & Glossary/nomenclature/symbol referencing \\
+			\href{https://ctan.org/pkg/hyperref}{hyperref} & For linking references within the text \\
+			\href{https://ctan.org/pkg/cleveref}{cleveref} & Smarter in-text referencing \\ 
+			\href{https://ctan.org/pkg/comment}{comment} & Comment out sections of \LaTeX\ code \\
+			\href{https://ctan.org/pkg/rotating}{rotating} & For rotating text/figures/tables \\
+			\href{https://ctan.org/pkg/draftwatermark}{draftwatermark} & Creates a watermark over every page \\
+			\bottomrule
+		\end{tabular}
+	\end{threeparttable}
+\end{table}
+
+\begin{table}[hbt!]
+	\centering
+	\begin{threeparttable}[b]
+		\caption{Useful \LaTeX\ packages related to document figures and tables.}
+		\label{tab:usefulPackagesFiguresTables}
+		\begin{tabular}{ll}
+			\toprule
+			\textbf{Package} & \textbf{Description} \\ \midrule
+			\href{https://ctan.org/pkg/graphicx}{graphicx} & For figures \\
+			\href{https://ctan.org/pkg/float}{float} & For figure placement \\
+			\href{https://ctan.org/pkg/caption}{caption} & Allows for sub-figures \\
+			\href{https://ctan.org/pkg/subcaption}{subcaption} & Allows for sub-figures \\
+			\href{https://ctan.org/pkg/color}{color} & Package required for InkScape text \\
+			\href{https://ctan.org/pkg/threeparttable}{threeparttable} & Aligns table caption to be the width of the table \\
+			\href{https://ctan.org/pkg/booktabs}{booktabs} & Allows for centered table entries \\
+			\href{https://ctan.org/pkg/array}{array} & Allows for centered table entries \\
+			\href{https://ctan.org/pkg/multirow}{multirow} & Allows for multirow table entries \\
+			\bottomrule
+		\end{tabular}
+	\end{threeparttable}
+\end{table}
+
+
+\begin{table}[hbt!]
+	\centering
+	\begin{threeparttable}[b]
+		\caption{Useful \LaTeX\ packages related to document math.}
+		\label{tab:usefulPackagesMath}
+		\begin{tabular}{ll}
+			\toprule
+			\textbf{Package} & \textbf{Description} \\ 
+			\midrule
+			\href{https://ctan.org/pkg/amsmath}{amsmath} & For extra math utilities \\
+			\href{https://ctan.org/pkg/amssymb}{amssymb} & For math symbols and fonts \\
+			\href{https://ctan.org/pkg/cancel}{cancel} & For crossing out terms in equations \\
+			\href{https://ctan.org/pkg/bm}{bm} & For bold mathematical symbols \\
+			\href{https://ctan.org/pkg/siunitx}{siunitx} & For SI units in equations \\
+			\href{https://ctan.org/pkg/empheq}{empheq} & To box multi-line equations \\ 
+			\bottomrule
+		\end{tabular}
+	\end{threeparttable}
+\end{table}
+
+
+\subsection{Nomenclature} \label{sec:nomenclatureLaTeXCode}
+
+\newacronym{SSUAV}{SSUAV}{Small-scale Supersonic Uncrewed Aerial Vehicle}
+\newglossaryentry{beta}{name={$\beta$},description={angle of sideslip}}
+Nomenclature tracking is facilitated via the \textit{glossaries} package. 
+The glossaries package allows for internal referencing of variables. 
+The style of the nomenclature presented is controlled via the command \verb*|\newglossarystyle{name}{code}|. 
+Acronyms and symbols are defined using the following two commands, respectively: 
+
+\noindent
+\verb*|\newacronym{label}{short}{long}| 
+
+\noindent
+\verb*|\newglossaryentry{label}{name={name},description={description}}|. 
+
+\noindent
+Variables are called in-text via the command \verb*|\gls{label}|. 
+The first time a acronym is written using the \verb*|\gls{}| command it is fully spelled out, all subsequent references print only the acronym.  
 
 \subsection{Internal Document Referencing}
 
-\LaTeX\ automatically handles referencing using its built-in \verb*|\ref{}| or the often preferred \textit{cleveref} userpackage \verb*|\cref{}|. 
+\LaTeX\ automatically handles referencing using its built-in \verb*|\ref{}| or the often preferred \textit{cleveref} package \verb*|\cref{}|. 
 How referencing works is a \verb*|\label{}| is placed at a section title (\verb*|\label{sec:}|), in an equation (\verb*|\label{eqn:}|), in a table (\verb*|\label{tab:}|), or in a figure (\verb*|\label{fig:}|). 
-With a label in place, say in \cref{fig:mufasaB2}, the Cleveref is used to add a reference in text. For example, \cref{fig:mufasaB2} is labelled \textit{fig:mufasaB2}, so to reference it in-text the code is \verb*|\cref{fig:mufasaB2}|.
+With a label in place, say in \cref{fig:mufasaB2}, the Cleveref is used to add a reference in text. For example, \cref{fig:mufasaB2} is labelled \textit{fig:mufasaB2}, so to reference \cref{fig:mufasaB2} in-text the code required is~\verb*|\cref{fig:mufasaB2}|.
 
 \subsection{Citations} \label{sec:citations}
 
@@ -117,7 +203,7 @@ It is also worth noting that plotted data could be directly drawn in \LaTeX\, us
 
 \subsection{Table Creation}
 Useful \LaTeX\ commands to generate tables meeting the requirements outlined in \Cref{sec:documentSetupFigureTableRules} are presented in this section. 
-A useful userpackage to generate tables with correct caption widths is \textit{threeparttable}. 
+A useful package to generate tables with correct caption widths is \textit{threeparttable}. 
 To generate correct thickness horizontal lines, the commands \verb*|\toprule|, \verb*|\midrule|, and \verb*|\bottomrule| are used. 
 Manually typing table formatting is complex, and it is instead recommended to use a formatting tool, such as the \href{https://www.tablesgenerator.com/}{TablesGenerator website}. 
 As an example, the code used to generate \Cref{tab:tenseBasedOnSection} is presented in \Cref{sec:appendixTables}. 
