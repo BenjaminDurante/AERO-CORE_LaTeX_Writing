@@ -24,6 +24,7 @@
 \usepackage{booktabs} % Allows for centered table entries
 \usepackage{threeparttable} % Aligns table caption to be the width of the table
 \usepackage{matlab-prettifier} % Allows for the addition of MATLAB code
+\usepackage{glossaries}
 
 \usepackage{pdfpages} % Allows for inclusion of other PDFs
 
@@ -43,8 +44,14 @@
 \include{variableDefinitions} % Document containing variables used throughout
 
 	\maketitle
+	\begin{center}
+		Revision 2
+		
+		\today
+	\end{center}
 	\input{abstract}
 	\tableofcontents
+	\newpage
 	\input{nomenclature}
 	\input{writing}
 	\input{coding}
