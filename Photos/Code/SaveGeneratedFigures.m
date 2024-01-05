@@ -1,6 +1,9 @@
 function SaveGeneratedFigures(FolderName,SaveStuff)
 %SaveGeneratedFigures Saves open figures
-%   Saves stuff
+%   Saves MATLAB figures currently open. The code requires that each figure
+%   have a unique name [set when creating the figure via: 
+%   figure(Name,Value)]. 
+%   Created by Benjamin Durante, 2021
 
 if SaveStuff == true
     % Acquires list of all open figures
